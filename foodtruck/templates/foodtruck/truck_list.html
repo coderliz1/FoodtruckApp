@@ -1,0 +1,73 @@
+{% extends 'foodtruck/base.html' %}  <!-- Extend the base template -->
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Food Trucks</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <ul class="list-group">
+                    {% if trucks %}
+                        {% for truck in trucks %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">{{ truck.name }}</h5>
+                                    <p class="mb-0">Location: {{ truck.location }}</p>
+                                    <small class="text-muted">Cuisine: {{ truck.cuisine_type }}</small>
+                                </div>
+                                <span class="badge bg-primary rounded-pill">{{ truck.schedule }}</span> <!-- Assuming you have a 'schedule' field in your model -->
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <li class="list-group-item text-center">No food trucks available.</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Trucks</title>
+</head>
+<body>
+    <h1>Food Trucks</h1>
+    <ul>
+        {% for truck in trucks %}
+            <li>{{ truck.name }}</li>
+        {% empty %}
+            <li>No food trucks available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+-->
