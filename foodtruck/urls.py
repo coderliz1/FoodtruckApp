@@ -16,9 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from foodtruck.views import truck_list
+from foodtruck import views  # Import views from the foodtruck app
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('trucks/', truck_list, name='truck_list'),
+    path('admin/', admin.site.urls),  # Admin view
+    path('', views.home, name='home'),  # Home page view
+    path('trucks/', views.truck_list, name='truck_list'),  # Truck list view
+    path('events/', views.event_list, name='event_list'),  # Event list view
+    path('search/', views.search_trucks, name='search_trucks'),  # Search trucks view
+    path('trucks/<int:truck_id>/calendar/', views.truck_calendar, name='truck_calendar'),  # Truck calendar view
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Serve media files

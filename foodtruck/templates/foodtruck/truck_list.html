@@ -3,6 +3,9 @@
 {% block content %}
     <div class="container mt-5">
         <h1 class="text-center mb-4">Food Trucks</h1>
+        <div class="row justify-content-center">
+        <a href="{% url 'home' %}" class="btn btn-success">Back To Home</a>
+        </div>
 
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -13,9 +16,10 @@
                                 <div>
                                     <h5 class="mb-1">{{ truck.name }}</h5>
                                     <p class="mb-0">Location: {{ truck.location }}</p>
-                                    <small class="text-muted">Cuisine: {{ truck.cuisine_type }}</small>
+                                    <small class="text-muted">Category: {{ truck.category }}</small> <!-- Added category display -->
                                 </div>
                                 <span class="badge bg-primary rounded-pill">{{ truck.schedule }}</span> <!-- Assuming you have a 'schedule' field in your model -->
+                                <a class="btn btn-info btn-sm" href="{% url 'truck_calendar' truck.id %}">View Calendar</a> <!-- Link to the truck's calendar -->
                             </li>
                         {% endfor %}
                     {% else %}
@@ -26,6 +30,48 @@
         </div>
     </div>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

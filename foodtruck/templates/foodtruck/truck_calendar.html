@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>{{ truck.name }}'s Calendar</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">{{ truck.name }}'s Calendar</h1>
+        <ul class="list-group mt-3">
+            {% if events %}
+                {% for event in events %}
+                    <li class="list-group-item">
+                        <strong>Location:</strong> {{ event.location }} <br>
+                        <strong>Time:</strong> {{ event.start_time }} to {{ event.end_time }}
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li class="list-group-item">No upcoming events for this truck.</li>
+            {% endif %}
+        </ul>
+        <a href="{% url 'truck_list' %}" class="btn btn-primary mt-3">Back to Truck List</a>
+    </div>
+</body>
+</html>

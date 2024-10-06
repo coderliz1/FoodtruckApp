@@ -1,0 +1,55 @@
+{% extends 'foodtruck/base.html' %}  <!-- Extend the base template -->
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Food Truck Tracker</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Welcome to the Food Truck Tracker</h1>
+        <div class="row justify-content-center">
+        <p class="lead">Find the best food trucks in your area.</p>
+        </div>
+
+       
+        
+
+        <div class="row justify-content-center">
+
+        <div class="col-auto">
+        <a href="{% url 'truck_list' %}" class="btn btn-primary ">View Food Trucks</a>
+        </div>
+
+        <div class="col-auto">
+        <a href="{% url 'event_list' %}" class="btn btn-secondary ">View Events</a>
+        </div>
+
+        <div class="col-auto">
+        <a href="{% url 'search_trucks' %}" class="btn btn-success">Search Food Trucks</a>
+        </div>
+        </div>
+
+        
+
+        <div class="row justify-content-center morespace">
+            <img src="{{ MEDIA_URL }}food_truck2.png" alt="Food Truck" class="img-fluid">
+        </div>
+
+        
+
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}

@@ -23,3 +23,12 @@ li {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+
+.morespace {
+    margin-top: 20px;  /* Adds space above the row */
+    margin-bottom: 20px; /* Adds space below the row */
+    padding-top: 20px;  /* Adds space inside the row at the top */
+    padding-bottom: 20px; /* Adds space inside the row at the bottom */
+}
