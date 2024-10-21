@@ -16,6 +16,9 @@ class FoodTruckEvent(models.Model):
     location = models.CharField(max_length=255)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
+    event_name = models.CharField(max_length=100)
+    date = models.DateField(default='2024-01-01')
+
 
     def __str__(self):
         return f"{self.food_truck.name} at {self.location}"

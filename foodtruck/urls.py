@@ -27,6 +27,7 @@ urlpatterns = [
     path('events/', views.event_list, name='event_list'),  # Event list view
     path('search/', views.search_trucks, name='search_trucks'),  # Search trucks view
     path('trucks/<int:truck_id>/calendar/', views.truck_calendar, name='truck_calendar'),  # Truck calendar view
+    path('add-event/', views.add_event, name='add_event'),  # New URL for adding an event
 ]
 
 if settings.DEBUG:
